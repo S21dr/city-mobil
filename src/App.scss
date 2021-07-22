@@ -1,43 +1,93 @@
-.mainLayout{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+.mainLayout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .logo {
-    width: 140px;
-    height: 40px;
-    background: #ffffff;
-    position: relative;
-    border-radius: 2px;
+  width: 140px;
+  height: 40px;
+  background: #ffffff;
+  position: relative;
+  border-radius: 2px;
 }
 
 .logo img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .site-layout-background {
-    background: #fff;
-    overflow: hidden;
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
+  background: #fff;
+  overflow: hidden;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.ant-table-wrapper{
-    flex: 1 1 auto;
-    overflow: hidden;
-    position: relative;
+
+.ant-table-wrapper {
+  flex: 1 1 auto;
+  overflow: hidden;
+  position: relative;
+
+  .ant-spin-nested-loading {
+    height: 100%;
+
+    .ant-spin-container {
+      height: 100%;
+
+      .ant-table {
+        height: 100%;
+
+        .ant-table-container {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+
+          .ant-table-header {
+            flex: 0 0 auto;
+          }
+
+          .ant-table-body {
+            flex: 1 1 auto;
+            overflow: auto !important;
+            tr{
+              transition: all 0.3s;
+              cursor: pointer;
+              &:hover{
+                td{
+                  background-color:#e6f7ff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.clickRowStyl {
+  background-color:#e6f7ff;
+  td{
+    background-color:#e6f7ff;
+  }
+}
+.selectedRow{
+  flex: 0 0 auto;
+  padding: 16px;
+  border-top: 1px solid #e6f7ff;
+  font-weight: 500;
 }
